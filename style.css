@@ -1,0 +1,315 @@
+/* Estilo inspirado na Tokisaki Kurumi - Date a Live */
+:root {
+    --kurumi-red: #c1121f;
+    --kurumi-dark: #2b2d42;
+    --kurumi-light: #f8f9fa;
+    --kurumi-gold: #ffd166;
+    --kurumi-shadow: rgba(193, 18, 31, 0.5);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    position: relative;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    color: var(--kurumi-light);
+    min-height: 100vh;
+    padding: 20px;
+}
+
+body::before {
+    content: '';
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: url('https://images.alphacoders.com/682/682365.jpg') center/cover no-repeat;
+    opacity: 0.9; /* Ajuste a opacidade conforme necessário */
+    z-index: -1;
+}
+
+header {
+    text-align: center;
+    margin-bottom: 30px;
+    padding: 20px;
+    background: rgba(43, 45, 66, 0.95);
+    border-radius: 10px;
+    box-shadow: 0 4px 15px var(--kurumi-shadow);
+}
+
+h1 {
+    color: var(--kurumi-red);
+    margin-bottom: 10px;
+}
+
+.clock-icon {
+    animation: tick 2s infinite;
+}
+
+@keyframes tick {
+    0%, 100% { transform: rotate(0deg); }
+    50% { transform: rotate(10deg); }
+}
+
+main {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+section {
+    background: rgba(43, 45, 66, 0.95);
+    border-radius: 10px;
+    padding: 20px;
+    margin-bottom: 20px;
+    box-shadow: 0 4px 10px var(--kurumi-shadow);
+}
+
+h2 {
+    color: var(--kurumi-red);
+    margin-bottom: 15px;
+    border-bottom: 2px solid var(--kurumi-red);
+    padding-bottom: 5px;
+}
+
+/* Formulário */
+.form-group {
+    margin-bottom: 15px;
+}
+
+label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: bold;
+}
+
+input, select {
+    width: 100%;
+    padding: 10px;
+    border: 2px solid var(--kurumi-dark);
+    border-radius: 5px;
+    background-color: rgba(248, 249, 250, 0.9);
+    color: var(--kurumi-dark);
+}
+
+input:focus, select:focus {
+    outline: none;
+    border-color: var(--kurumi-red);
+    box-shadow: 0 0 5px var(--kurumi-shadow);
+}
+
+button {
+    padding: 10px 15px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-weight: bold;
+    transition: all 0.3s ease;
+    margin-right: 10px;
+    margin-top: 10px;
+}
+
+.btn-primary {
+    background-color: var(--kurumi-red);
+    color: white;
+}
+
+.btn-primary:hover:not(:disabled) {
+    background-color: #a50e1a;
+    transform: translateY(-2px);
+}
+
+.btn-secondary {
+    background-color: var(--kurumi-gold);
+    color: var(--kurumi-dark);
+}
+
+.btn-secondary:hover {
+    background-color: #e9bc2c;
+    transform: translateY(-2px);
+}
+
+.btn-danger {
+    background-color: #d90429;
+    color: white;
+}
+
+.btn-danger:hover {
+    background-color: #b10022;
+    transform: translateY(-2px);
+}
+
+button:disabled {
+    opacity: 0.6;
+    cursor: not-allowed;
+}
+
+/* Lista de equipamentos */
+.equipment-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 15px;
+}
+
+.equipment-table th {
+    background-color: var(--kurumi-red);
+    color: white;
+    padding: 12px;
+    text-align: left;
+}
+
+.equipment-table td {
+    padding: 12px;
+    border-bottom: 1px solid rgba(248, 249, 250, 0.1);
+}
+
+.equipment-table tr:hover {
+    background-color: rgba(193, 18, 31, 0.1);
+}
+
+/* Status badges */
+.status-badge {
+    padding: 5px 10px;
+    border-radius: 20px;
+    font-weight: bold;
+    text-align: center;
+    display: inline-block;
+}
+
+.status-available {
+    background-color: #4cc9f0;
+    color: var(--kurumi-dark);
+}
+
+.status-borrowed {
+    background-color: var(--kurumi-red);
+    color: white;
+}
+
+/* Filtros */
+.filters {
+    display: flex;
+    gap: 15px;
+    flex-wrap: wrap;
+    align-items: end;
+}
+
+.filter-group {
+    flex: 1;
+    min-width: 200px;
+}
+
+/* Contadores */
+.counters {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    gap: 15px;
+}
+
+.counter {
+    text-align: center;
+    padding: 15px;
+    background: rgba(255, 209, 102, 0.5);
+    border-radius: 10px;
+    flex: 1;
+    min-width: 150px;
+}
+
+.counter h3 {
+    color: var(--kurumi-gold);
+    margin-bottom: 5px;
+}
+
+.counter .number {
+    font-size: 2rem;
+    font-weight: bold;
+    color: var(--kurumi-red);
+}
+
+/* Mensagem de lista vazia */
+.empty-list {
+    text-align: center;
+    padding: 30px;
+    color: var(--kurumi-gold);
+    font-style: italic;
+}
+
+/* Ajustes para os botões de ação */
+.equipment-table td button {
+    margin: 2px;
+    padding: 6px 10px;
+    font-size: 0.85rem;
+}
+
+/* Estilo específico para os botões de empréstimo/devolução */
+.btn-emprestar {
+    background-color: #4cc9f0;
+    color: var(--kurumi-dark);
+}
+
+.btn-emprestar:hover {
+    background-color: #3aa8d0;
+}
+
+.btn-devolver {
+    background-color: var(--kurumi-gold);
+    color: var(--kurumi-dark);
+}
+
+.btn-devolver:hover {
+    background-color: #e9bc2c;
+}
+
+/* funcionalidade do scroll */
+.form-section {
+    scroll-margin-top: 20px;
+    transition: all 0.3s ease;
+}
+
+.form-section.highlight {
+    animation: highlight 2s ease;
+    box-shadow: 0 0 0 3px var(--kurumi-gold);
+}
+
+@keyframes highlight {
+    0% { box-shadow: 0 0 0 0 var(--kurumi-gold); }
+    50% { box-shadow: 0 0 0 10px rgba(255, 209, 102, 0.3); }
+    100% { box-shadow: 0 0 0 3px var(--kurumi-gold); }
+}
+
+/* Melhorar acessibilidade do foco */
+input:focus, select:focus, button:focus {
+    outline: 2px solid var(--kurumi-gold);
+    outline-offset: 2px;
+}
+
+/* Responsividade */
+@media (max-width: 768px) {
+    .filters {
+        flex-direction: column;
+    }
+    
+    .filter-group {
+        width: 100%;
+    }
+    
+    .counters {
+        flex-direction: column;
+    }
+    
+    .equipment-table {
+        display: block;
+        overflow-x: auto;
+    }
+    
+    .equipment-table td button {
+        display: block;
+        width: 100%;
+        margin-bottom: 5px;
+    }
+}

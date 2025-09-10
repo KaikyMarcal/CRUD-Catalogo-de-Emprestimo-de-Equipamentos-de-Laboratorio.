@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Catálogo de Empréstimos</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+</head>
+<body>
+    <div id="app">
+        <header>
+            <h1>Catálogo de Empréstimos</h1>
+            <p>Gerenciamento de equipamentos</p>
+        </header>
+
+        <main>
+            <section class="form-section" ref="formSection">
+                <h2>{{ isEditing ? 'Editar Equipamento' : 'Novo Equipamento' }}</h2>
+                <equipment-form 
+                    :equipment="currentEquipment"
+                    :is-editing="isEditing"
+                    @save-equipment="saveEquipment"
+                    @cancel-edit="cancelEdit">
+                </equipment-form>
+            </section>
+
+            <section class="filters-section">
+                <h2>Filtros</h2>
+                <equipment-filters 
+                    :filters="filters"
+                    :categories="categories"
+                    @update-filters="updateFilters">
+                </equipment-filters>
+            </section>
+
+            <section class="counters-section">
+                <h2>Estatísticas</h2>
+                <equipment-counters :equipments="filteredEquipments"></equipment-counters>
+            </section>
+
+            <section class="list-section">
+                <h2>Lista de Equipamentos</h2>
+                <equipment-list 
+                    :equipments="filteredEquipments"
+                    @edit-equipment="editEquipment"
+                    @delete-equipment="deleteEquipment"
+                    @toggle-status="toggleStatus">
+                </equipment-list>
+            </section>
+        </main>
+    </div>
+
+    <script type="module" src="main.js"></script>
+</body>
+</html>
