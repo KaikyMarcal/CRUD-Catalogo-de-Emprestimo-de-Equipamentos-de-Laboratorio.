@@ -24,18 +24,6 @@ body {
     background-repeat: no-repeat;
     background-position: center;
     background-attachment: fixed;
-}
-
-body::before {
-    content: '';
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    opacity: 0.9; /* Ajuste a opacidade conforme necessário */
-    z-index: -1;
-}
 
 header {
     text-align: center;
@@ -318,6 +306,7 @@ input:focus, select:focus, button:focus {
     }
 
 }
+
 
 
 
