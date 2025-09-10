@@ -19,7 +19,7 @@ body {
     color: var(--kurumi-light);
     min-height: 100vh;
     padding: 20px;
-    background-image: url('KURUMI.jpg');
+    background-image: url('https://github.com/KaikyMarcal/CRUD-Catalogo-de-Emprestimo-de-Equipamentos-de-Laboratorio./blob/main/KURUMI.jpg');
     background-size: cover;
     background-repeat: no-repeat;
     background-position: center;
@@ -318,6 +318,7 @@ input:focus, select:focus, button:focus {
     }
 
 }
+
 
 
 
