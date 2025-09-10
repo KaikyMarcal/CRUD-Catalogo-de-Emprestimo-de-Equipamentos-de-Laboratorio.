@@ -19,6 +19,11 @@ body {
     color: var(--kurumi-light);
     min-height: 100vh;
     padding: 20px;
+    background-image: url('KURUMI.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-attachment: fixed;
 }
 
 body::before {
@@ -28,11 +33,6 @@ body::before {
     left: 0;
     width: 100%;
     height: 100%;
-    background-image: url('KURUMI.jpg');
-    background-size: cover;
-    background-repeat: no-repeat;
-    background-position: center;
-    background-attachment: fixed;
     opacity: 0.9; /* Ajuste a opacidade conforme necessário */
     z-index: -1;
 }
@@ -318,6 +318,7 @@ input:focus, select:focus, button:focus {
     }
 
 }
+
 
 
 
